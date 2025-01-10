@@ -1,4 +1,5 @@
 
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
@@ -181,13 +182,17 @@ public class home extends javax.swing.JFrame {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         try {
-            Connection conn = singletonConnection.getCon();
-            String reportpath = "ReportLMS.jrxml";
-            JasperReport jr = JasperCompileManager.compileReport(reportpath);
-            JasperPrint jp = JasperFillManager.fillReport(jr, null, conn);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:4306/lms","root","");
+            InputStream reportStream = getClass().getResourceAsStream("ReportLMS.jrxml");
+            JasperReport jr = JasperCompileManager.compileReport(reportStream);
+            JasperPrint jp = JasperFillManager.fillReport(jr, null, con);
             JasperViewer.viewReport(jp);
-            conn.close();
-        } catch (Exception e) {
+
+            con.close();
+            
+            
+        }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_jButton9ActionPerformed

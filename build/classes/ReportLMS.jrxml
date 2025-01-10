@@ -1,0 +1,115 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="ReportLMS" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="56a392c5-ab3d-4b1f-a40a-abf934f49799">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ReportLMS"/>
+	<query language="SQL"><![CDATA[SELECT 
+    book.bookID, 
+    book.name AS bookName, 
+    student.studentID, 
+    student.name AS studentName, 
+    issue.issueDate, 
+    issue.dueDate,
+    issue.returnBook AS status
+FROM 
+    issue
+INNER JOIN 
+    book ON issue.bookID = book.bookID
+INNER JOIN 
+    student ON issue.studentID = student.studentID
+]]></query>
+	<field name="bookID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="bookID"/>
+		<property name="com.jaspersoft.studio.field.label" value="bookID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="book"/>
+	</field>
+	<field name="bookName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="bookName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="book"/>
+	</field>
+	<field name="studentID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="studentID"/>
+		<property name="com.jaspersoft.studio.field.label" value="studentID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="studentName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="studentName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="student"/>
+	</field>
+	<field name="issueDate" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="issueDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="issueDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="issue"/>
+	</field>
+	<field name="dueDate" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dueDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="dueDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="issue"/>
+	</field>
+	<field name="status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="returnBook"/>
+		<property name="com.jaspersoft.studio.field.label" value="status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="issue"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="315d1db3-dae8-4503-8737-a613340803b2" x="134" y="16" width="286" height="47" fontSize="30.0">
+			<text><![CDATA[Issued Book Details]]></text>
+		</element>
+	</title>
+	<columnHeader height="32" splitType="Stretch">
+		<element kind="staticText" uuid="a91bd8cd-3644-4e9b-9401-e3c28bd6b67c" x="41" y="0" width="70" height="30">
+			<text><![CDATA[bookID]]></text>
+		</element>
+		<element kind="staticText" uuid="19cad680-b920-46cb-9329-9ee678dd326d" x="111" y="0" width="70" height="30">
+			<text><![CDATA[bookName]]></text>
+		</element>
+		<element kind="staticText" uuid="8a89b487-4fbd-45b7-8d6c-9e0b3e55df97" x="181" y="0" width="70" height="30">
+			<text><![CDATA[studentID]]></text>
+		</element>
+		<element kind="staticText" uuid="6ee85f0b-0621-4feb-9c91-42c3d5ec338f" x="251" y="0" width="70" height="30">
+			<text><![CDATA[studentName]]></text>
+		</element>
+		<element kind="staticText" uuid="2aede071-255a-4a76-be4f-8776607b44f5" x="321" y="0" width="70" height="30">
+			<text><![CDATA[issueDate]]></text>
+		</element>
+		<element kind="staticText" uuid="e879fa21-963c-4e65-8e79-d8bbf2282f3b" x="391" y="0" width="70" height="30">
+			<text><![CDATA[dueDate]]></text>
+		</element>
+		<element kind="staticText" uuid="e70c9258-fd46-4522-989c-650f821bf84a" x="461" y="0" width="70" height="30">
+			<text><![CDATA[status]]></text>
+		</element>
+		<element kind="line" uuid="748ac44e-733a-4723-9ddc-f792ca8607b8" x="30" y="31" width="515" height="1">
+			<pen lineWidth="2.0"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="51" splitType="Stretch">
+			<element kind="textField" uuid="62c4328d-bb54-44b1-ad49-a8c0d32ee0a0" x="41" y="10" width="70" height="30">
+				<expression><![CDATA[$F{bookID}]]></expression>
+			</element>
+			<element kind="textField" uuid="1de54125-8b6b-4f5d-b30b-3818f707be26" x="111" y="10" width="70" height="30">
+				<expression><![CDATA[$F{bookName}]]></expression>
+			</element>
+			<element kind="textField" uuid="6c166cfd-abb8-4f1f-83b2-23822de6e0a7" x="181" y="10" width="70" height="30">
+				<expression><![CDATA[$F{studentID}]]></expression>
+			</element>
+			<element kind="textField" uuid="f88c04eb-28f0-4989-b975-9ccbe539f858" x="250" y="10" width="70" height="30">
+				<expression><![CDATA[$F{studentName}]]></expression>
+			</element>
+			<element kind="textField" uuid="211c4b1c-1588-42e0-9752-3bcc93a431d8" x="320" y="10" width="70" height="30">
+				<expression><![CDATA[$F{issueDate}]]></expression>
+			</element>
+			<element kind="textField" uuid="b98f2bbe-e627-4f33-8b4d-215197b8e1b6" x="390" y="10" width="70" height="30">
+				<expression><![CDATA[$F{dueDate}]]></expression>
+			</element>
+			<element kind="textField" uuid="77ef552c-1139-4ee9-979c-67cd6f30a520" x="461" y="10" width="70" height="30">
+				<expression><![CDATA[$F{status}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

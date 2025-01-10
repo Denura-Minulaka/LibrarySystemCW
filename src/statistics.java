@@ -59,13 +59,13 @@ public class statistics extends javax.swing.JFrame {
         jTable1.setBackground(new java.awt.Color(255, 255, 153));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Student ID", "Student Name", "Book ID", "Book Name", "Isuue Date", "Due Date"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -79,13 +79,13 @@ public class statistics extends javax.swing.JFrame {
         jTable2.setBackground(new java.awt.Color(255, 255, 153));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Student ID", "Student Name", "Book ID", "Book Name", "Issue Date", "Due Date"
             }
         ));
         jScrollPane2.setViewportView(jTable2);
